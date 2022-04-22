@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <canvas width="600" height="600"></canvas>
+        <script>
+            let canvas = document.querySelector('canvas');
+            let ctx = canvas.getContext('2d');
+
+            ctx.fillStyle = 'blue';
+            // ctx.fillRect(100, 100, 400, 400)
+
+            ctx.lineWidth = 4;
+            ctx.beginPath();
+            ctx.rect(100, 100, 400, 400);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(300, 300, 100, 0, Math.PI * 2);
+            ctx.stroke();
+
+            let year = 2042;
+            let nextYear = year + 1;
+
+            let dinner = 'pasta';
+            let sentence = 'Tonight, dinner will be ' + dinner;
+
+            function saySomething(param) {
+                console.log(param)
+            };
+
+            saySomething(sentence);
+
+            function add(a, b) {
+              return a + b;
+            }
+
+            let result = add(5, 7);
+            console.log(result);
+
+            let multiply = (a, b) => {
+              return a * b;
+            }
+
+            console.log(multiply(5, 7))
+        </script>
+    </body>
+</html>

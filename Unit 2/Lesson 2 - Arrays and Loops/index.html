@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <canvas width="600" height="600"></canvas>
+        <script>
+            let canvas = document.querySelector('canvas');
+            let ctx = canvas.getContext('2d');
+
+            ctx.fillStyle = 'blue';
+            // ctx.fillRect(100, 100, 400, 400)
+
+            ctx.lineWidth = 4;
+            ctx.beginPath();
+            ctx.rect(100, 100, 400, 400);
+            // ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(300, 300, 100, 0, Math.PI * 2);
+            // ctx.stroke();
+
+            const width = 60;
+            const height = 60;
+            const gap = 20;
+            let x, y;
+            for (let i = 0; i < 5; i++) {
+              for (let j = 0; j < 5; j++){
+                x = 100 + (width + gap) * i;
+                y = 100 + (height + gap) * j;
+                ctx.beginPath();
+                ctx.rect(x, y, width, height);
+                ctx.stroke();
+
+                if (Math.random() > 0.5){
+                  ctx.beginPath();
+                  ctx.rect(x + 8, y + 8, width - 16, height - 16 )
+                  ctx.stroke();
+                }
+
+                if (Math.random() > 0.5){
+                  ctx.beginPath();
+                  ctx.rect(x + 16, y + 16, width - 32, height - 32 )
+                  ctx.stroke();
+                }
+                if (Math.random() > 0.5){
+                  ctx.beginPath();
+                  ctx.rect(x + 32, y + 32, width - 64, height - 64 )
+                  ctx.stroke();
+                }
+              }
+            }
+
+            let years = [];
+            let menu = ['starter', 'main', 'dessert', 'drinks', 'sides']
+
+            for (let i = 0; i < menu.length; i++){
+              console.log(menu[i]);
+            }
+
+            for (let i = 0; i < 10; i++) {
+              years.push(2040 + i);
+            }
+
+            console.log(years);
+
+            menu.forEach(item => {
+              console.log(item);
+            })
+        </script>
+    </body>
+</html>
